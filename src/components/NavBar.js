@@ -1,4 +1,5 @@
 import { Navbar, Container, Nav, Image } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './NavBar.css'
 
@@ -6,16 +7,16 @@ const NavBar = () => {
     return(
         <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
-            <Image src="https://cdn-icons-png.flaticon.com/512/10/10699.png"
+          <Link to="/">
+            <Image className="img-navbar" src="https://cdn-icons-png.flaticon.com/512/10/10699.png"
                 alt="logo"
             />
-            </Navbar.Brand>
+            </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Add Exercise</Nav.Link>
+              <Link to="/">Home</Link>
+              <Link to="/addExercise">Add Exercise</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -1,4 +1,5 @@
 import { Table } from "react-bootstrap"
+import {Link} from 'react-router-dom'
 
 const AdminHomeView = () => {
     return (
@@ -15,12 +16,24 @@ const AdminHomeView = () => {
                     <tr>
                     <td>1</td>
                     <td>User1</td>
-                    <td>Edit Routine</td>
+                    <td>
+                        <Link
+                            to="/addRoutine"
+                            className="btn btn-warning">
+                                Edit Routine
+                        </Link>
+                    </td>
                     </tr>
                     <tr>
                     <td>2</td>
                     <td>User2</td>
-                    <td>Add Routine</td>
+                    <td>
+                        <Link
+                        to="/addRoutine"
+                        className="btn btn-success">
+                            Add Routine
+                        </Link>
+                    </td>
                     </tr>
                 </tbody>
             </Table>
