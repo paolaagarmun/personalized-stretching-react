@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap"
 const AddExerciseView = () => {
     return (
         <div className="container mt-5" >
+            <h2>It works!!!!!!!!</h2>
             <Form>
                 
                 <Form.Label>Name:</Form.Label>
