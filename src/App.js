@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import AdminHomeView from './views/AdminHomeView';
 import AddExerciseView from './views/AddExerciseView';
 import AddRoutineView from './views/AddRoutineView';
-import EditRoutineView from './views/EditCoffeeView';
+import EditRoutineView from './views/EditRoutineView';
 
 function App() {
   return (
