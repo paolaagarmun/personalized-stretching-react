@@ -5,6 +5,7 @@ import AdminHomeView from './views/AdminHomeView';
 import AddExerciseView from './views/AddExerciseView';
 import AddRoutineView from './views/AddRoutineView';
 import EditRoutineView from './views/EditRoutineView';
+import ExercisesView from './views/ExercisesView'
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<AdminHomeView/>}/>
         <Route path="/addExercise" element={<AddExerciseView/>}/>
-        <Route path="/addRoutine" element={<AddRoutineView/>}/>
-        <Route path="/editRoutine" element={<EditRoutineView/>}/>
+        <Route path="/addRoutine/:id" element={<AddRoutineView/>} />
+        <Route path="/editRoutine/:id" element={<EditRoutineView/>}/>
+        <Route path="/exercisesLibrary" element={<ExercisesView/>}/>
       </Routes>
       
     </>
