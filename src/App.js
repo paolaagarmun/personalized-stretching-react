@@ -16,7 +16,6 @@ function App() {
         <Route path="/addExercise" element={<AddExerciseView/>}/>
         <Route path="/addRoutine/:id" element={<AddRoutineView/>} />
         <Route path="/editRoutine/:id" element={<EditRoutineView/>}/>
-        <Route path="/exercisesLibrary" element={<ExercisesView/>}/>
       </Routes>
       
     </>

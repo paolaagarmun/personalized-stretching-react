@@ -1,0 +1,9 @@
+.mainDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.addExerciseForm{
+    width: 40vw;
+    margin-right: 10px;;
+}

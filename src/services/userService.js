@@ -9,3 +9,8 @@ export const getSingleUserFromApi = async (id) => {
     const response = await axios.get(`http://localhost:5000/api/v1/users/user/${id}`);
     return response;
 }
+
+export const updateSingleUserFromApi = async (id) => {
+    const response = await axios.get(`http://localhost:5000/api/v1/users/user/${id}`);
+    return response;
+}

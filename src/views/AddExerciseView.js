@@ -1,8 +1,11 @@
-import { useState } from "react"
-import { createExercise } from "../services/exerciseService"
+import { useEffect, useState } from "react"
+import { createExercise, getAllExercises } from "../services/exerciseService"
 
 import Button from "@restart/ui/esm/Button"
 import { Form } from "react-bootstrap"
+import ExerciseCard from "../components/ExerciseCard"
+
+import './AddExercisesView.css'
 
 const AddExerciseView = () => {
 
@@ -27,10 +30,22 @@ const AddExerciseView = () => {
         createExercise(exercise);
     }
 
+    const [exercises, setExercises] = useState([]);
+
+    useEffect(() => {
+        getExercise();
+    }, [])
+
+    const getExercise = async () => {
+        const response = await getAllExercises();
+        setExercises(response.data)
+    }
+
     return (
-        <div className="container mt-5" >
-            <h2>It works!!!!!!!!</h2>
-            <Form>
+        <div className="mainDiv container mt-5" >
+            <div>
+            <h2>Add a new exercise:</h2>
+            <Form className="addExerciseForm">
                 <Form.Label>Name:</Form.Label>
                 <Form.Control 
                     name="name"
@@ -83,7 +98,28 @@ const AddExerciseView = () => {
                     type="submit">
                     Create exercise
                 </Button>
-            </Form>
+            </Form>  
+            </div>
+            <div class="d-flex" style={{height: "100vh"}}>
+                <div class="vr"></div>
+            </div>
+            <div className="container mt-3">
+            <h2>Exercise library</h2>
+            <div className="container">
+                { exercises.length === 0 && (
+                    <h2>No exercises in library</h2>
+                )}
+                <div className="row">
+                    { exercises.map(exercise => (
+                        <div key={exercise._id} className="cardBox col-lg-4 col-md-6 col-sm-12">
+                            <ExerciseCard obj={exercise}/>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+
+        </div>
         </div>
     )
 }
