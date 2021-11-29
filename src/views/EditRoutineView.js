@@ -7,31 +7,53 @@ import {getSingleRoutineFromApi,updateRoutineInApi} from '../services/routineSer
 import {getSingleUserFromApi} from '../services/userService'
 
 const EditRoutineView = () => {
-    const [routine, setRoutine] = useState({});
+    const [routine, setRoutine] = useState({
+        exercise1: "",
+        exercise2: "",
+        exercise3: "",
+        notes: ""
+    });
     const [exercises, setExercises] = useState([]);
     const [user, setUser] = useState({});
     const { id } = useParams();
 
-    console.log("routine object:",routine)
+    
+    // console.log("routine object:",user.routine)
+
+    useEffect(() => {
+        fetchUser();
+        getExercises();
+    }, [])
+    
     useEffect(() => {
         getRoutine();
-        getExercises();
-        fetchUser();
-    }, [])
+    }, [routine])
 
     const getRoutine = async () => {
-        const response = await getSingleRoutineFromApi(id);
-        await setRoutine(response.data);
+        console.log("ROUTINE", user.routine);
+        // const response = await getSingleRoutineFromApi(user.routine._id);
+        // await setRoutine(response.data);
+        // console.log("ROUTINE", response.data);
+        // setRoutine({
+        //     ...routine,
+        //     notes: user.routine.notes
+        // })
     }
-
+    
     const getExercises = async () => {
         const response = await getAllExercises();
-        setExercises(response.data)
+        setExercises(response.data);
+        
     }
-
+    
     const fetchUser = async () => {
         const response = await getSingleUserFromApi(id);
-        setUser(response.data)
+        await setUser(response.data)
+        await setRoutine({
+            ...routine,
+            notes: user.routine?.notes
+        })
+        console.log(user);
     }
 
     const handleRoutineChange = (event) => {
@@ -53,7 +75,7 @@ const EditRoutineView = () => {
             <div>
             <h2>Edit the routine for {user.name}</h2>
             <Form>
-                <Form.Label>Current: {routine.exercise1}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise1.name}</Form.Label>
                 <Form.Select 
                     name = "exercise1"
                     value = {routine.exercise1}
@@ -67,7 +89,7 @@ const EditRoutineView = () => {
                             {exercise.name}
                         </option>))}
                 </Form.Select>
-                <Form.Label>Current: {routine.exercise2}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise2.name}</Form.Label>
                 <Form.Select 
                     name = "exercise2"
                     value = {routine.exercise2}
@@ -81,7 +103,7 @@ const EditRoutineView = () => {
                             {exercise.name}
                         </option>))}
                 </Form.Select>
-                <Form.Label>Current: {routine.exercise3}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise3.name}</Form.Label>
                 <Form.Select 
                     name = "exercise3"
                     value = {routine.exercise3}

@@ -5,7 +5,7 @@ import AdminHomeView from './views/AdminHomeView';
 import AddExerciseView from './views/AddExerciseView';
 import AddRoutineView from './views/AddRoutineView';
 import EditRoutineView from './views/EditRoutineView';
-import ExercisesView from './views/ExercisesView'
+import ExerciseDetailsView from './views/ExerciseDetailsView'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/addExercise" element={<AddExerciseView/>}/>
         <Route path="/addRoutine/:id" element={<AddRoutineView/>} />
         <Route path="/editRoutine/:id" element={<EditRoutineView/>}/>
+        <Route path="/exerciseDetails/:id" element={<ExerciseDetailsView/>}/>
       </Routes>
       
     </>
