@@ -100,8 +100,8 @@ const AddExerciseView = () => {
                 </Button>
             </Form>  
             </div>
-            <div class="d-flex" style={{height: "100vh"}}>
-                <div class="vr"></div>
+            <div className="d-flex" style={{height: "100vh"}}>
+                <div className="vr"></div>
             </div>
             <div className="container mt-3">
             <h2>Exercise library</h2>

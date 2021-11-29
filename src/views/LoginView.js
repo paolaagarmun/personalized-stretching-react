@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
-import { loginUserToApi } from "../services/authService"
+import { isAuthenticated, loginUserToApi } from "../services/authService"
+
 
 
 const LoginView = () => {
@@ -23,7 +24,13 @@ const LoginView = () => {
         event.preventDefault();
         try {
             const userResponse = await loginUserToApi(user);
-            navigate("/");
+            console.log(userResponse);
+            if (userResponse.data.role === 'ADMIN') {
+                navigate("/adminHome");
+            } else {
+                navigate(`/routine/${userResponse.data._id}`);
+            }
+            
             await window.location.reload();
         } catch (error) {
             console.log(error)
@@ -32,7 +39,7 @@ const LoginView = () => {
         setUser({
             email: "",
             password: ""
-        })
+        })}
     
     return (
         <div className="container mt-5">
@@ -58,4 +65,5 @@ const LoginView = () => {
   )
 }
 
-export default LoginView
+
+export default LoginView;
