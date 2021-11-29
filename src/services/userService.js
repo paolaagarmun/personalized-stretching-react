@@ -10,7 +10,7 @@ export const getSingleUserFromApi = async (id) => {
     return response;
 }
 
-export const updateSingleUserFromApi = async (id) => {
-    const response = await axios.get(`http://localhost:5000/api/v1/users/user/${id}`);
+export const updateSingleUserFromApi = async (id, routineId) => {
+    const response = await axios.put(`http://localhost:5000/api/v1/users/user/${id}`, routineId);
     return response;
 }

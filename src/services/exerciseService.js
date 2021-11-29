@@ -14,3 +14,9 @@ export const getAllExercises = async () => {
     const response = await axios.get(`http://localhost:5000/api/v1/exercises`);
     return response;
 }
+
+//GET single exercises
+export const getSingleExerciseFromApi = async (id) => {
+    const response = await axios.get(`http://localhost:5000/api/v1/exercises/exercise/${id}`);
+    return response;
+}

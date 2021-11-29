@@ -10,13 +10,14 @@ const EditRoutineView = () => {
     const [routine, setRoutine] = useState({});
     const [exercises, setExercises] = useState([]);
     const [user, setUser] = useState({});
-    const { id } = useParams
+    const { id } = useParams();
 
+    console.log("routine object:",routine)
     useEffect(() => {
         getRoutine();
         getExercises();
         fetchUser();
-    })
+    }, [])
 
     const getRoutine = async () => {
         const response = await getSingleRoutineFromApi(id);
@@ -38,7 +39,7 @@ const EditRoutineView = () => {
             ...routine,
             [event.target.name]: event.target.value
         });
-        console.log(routine)
+        // console.log(routine)
     }
 
     const handleSumbit = async (event) => {
@@ -52,53 +53,51 @@ const EditRoutineView = () => {
             <div>
             <h2>Edit the routine for {user.name}</h2>
             <Form>
-                <Form.Label>Name:</Form.Label>
+                <Form.Label>Current: {routine.exercise1}</Form.Label>
                 <Form.Select 
                     name = "exercise1"
                     value = {routine.exercise1}
                     onChange = {handleRoutineChange}
                     type="text" 
-                    placeholder="Enter name of exercise" 
                     id = ""
                     >
-                    <option>Dropdown</option>
+                    <option>Select stretch movement</option>
                     {exercises.map((exercise) => (
                         <option key={exercise._id} value={exercise._id}>
                             {exercise.name}
                         </option>))}
                 </Form.Select>
+                <Form.Label>Current: {routine.exercise2}</Form.Label>
                 <Form.Select 
                     name = "exercise2"
                     value = {routine.exercise2}
                     onChange = {handleRoutineChange}
                     type="text" 
-                    placeholder="Enter name of exercise" 
                     id = ""
                     >
-                    <option>Dropdown</option>
+                    <option>Select stretch movement</option>
                     {exercises.map((exercise) => (
                         <option key={exercise._id} value={exercise._id}>
                             {exercise.name}
                         </option>))}
                 </Form.Select>
+                <Form.Label>Current: {routine.exercise3}</Form.Label>
                 <Form.Select 
                     name = "exercise3"
                     value = {routine.exercise3}
                     onChange = {handleRoutineChange}
                     type="text" 
-                    placeholder="Enter name of exercise" 
                     id = ""
                     >
-                    <option>Dropdown</option>
+                    <option>Select stretch movement</option>
                     {exercises.map((exercise) => (
                         <option key={exercise._id} value={exercise._id}>
                             {exercise.name}
                         </option>))}
                 </Form.Select>
-                
                 <FloatingLabel controlId="floatingTextarea2" label="Comments">
                     <Form.Control
-                        onChange={handleChange}
+                        onChange={handleRoutineChange}
                         className="form-control"
                         name="notes"
                         as="textarea"
