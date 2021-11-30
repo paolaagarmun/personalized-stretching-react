@@ -32,6 +32,7 @@ const NavBar = () => {
                   <a style={{ margin: '8px'}}>
                     Welcome, {user.name}
                   </a>
+                  <Link to={`/profile/${user.id}`}>Profile</Link>
                   <button onClick={logOut} className="btn btn-outline-dark">
                     Sign out
                   </button>

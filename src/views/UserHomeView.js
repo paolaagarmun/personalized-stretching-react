@@ -4,7 +4,7 @@ import {getSingleUserFromApi} from '../services/userService'
 import { Link } from "react-router-dom";
 
 
-const UserRoutineView = () => {
+const UserHomeView = () => {
     const [userLoggedIn, setUserLoggedIn] = useState({})
     const {id} = useParams();
     
@@ -22,17 +22,25 @@ const UserRoutineView = () => {
     return (
         
         <>
-        <h2>My routine:</h2>
-        <div>
-            Notes: {userLoggedIn.routine.notes}
-        </div>
-        <div>
-            <div>Exercise 1</div>
-            <div>Exercise 2</div>
-            <div>Exercise 3</div>
-        </div>
+        <h2>Welcome, {userLoggedIn.name}</h2>
+        
+            {!userLoggedIn.routine ? 
+                <h4>No routines yet</h4>
+            : 
+               <div>
+               <h4>This is your routine</h4>
+               <p>{userLoggedIn.routine.exercise1.name}</p>
+               <p>{userLoggedIn.routine.exercise2.name}</p>
+               <p>{userLoggedIn.routine.exercise3.name}</p>
+               <p>{userLoggedIn.routine.notes}</p>
+
+                </div>
+                                    
+            }
+        
+        
         </>
     )
 }
 
-export default UserRoutineView;
+export default UserHomeView;

@@ -9,7 +9,6 @@ const SignupView = () => {
         email: "",
         password: "",
         weightCarried: "",
-        handUse: "",
         sittingTime: "",
         standingTime: ""
     });
@@ -23,13 +22,13 @@ const SignupView = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(user);
         signUpUser(user);
         setUser({
             name: "",
             email: "",
             password: "",
             weightCarried: "",
-            handUse: "",
             sittingTime: "",
             standingTime: ""
         })
@@ -39,7 +38,7 @@ const SignupView = () => {
 
     return (
         <div className="container">
-            <form className="form">
+            <form className="form-control">
                 <h2>Sign Up</h2>
                 <input
                     value={user.name}
@@ -47,7 +46,7 @@ const SignupView = () => {
                     onChange={handleChange}
                     placeholder="name"
                     type="text"
-                    className="form-control"
+                    
                 />
                 <input
                     value={user.email}
@@ -55,7 +54,7 @@ const SignupView = () => {
                     onChange={handleChange}
                     placeholder="email"
                     type="text"
-                    className="form-control"
+                    
                 />
                 <input
                     value={user.password}
@@ -63,40 +62,53 @@ const SignupView = () => {
                     onChange={handleChange}
                     placeholder="password"
                     type="password"
-                    className="form-control"
+                    
                 />
-                <input
-                    value={user.weightCarried}
+                <label>How much weight do you carry daily?:</label>
+                <select
+                    onChange={handleChange}
+                    defaultValue={"title"}
+                    className="mt-4"
                     name="weightCarried"
+                    id="1"
+                >   <option disabled value="title">
+                        Select
+                    </option>
+                    <option value="1-5">1-5lbs</option>
+                    <option value="5-10">5-10lbs</option>
+                    <option value="10-15">10-15lbs</option>
+                    <option value="15+">15+ lbs</option>
+                </select>
+                <label>Choose your average sitting time:</label>
+                <select
                     onChange={handleChange}
-                    placeholder="weightCarried"
-                    type="text"
-                    className="form-control"
-                />
-                <input
-                    value={user.handUse}
-                    name="handUse"
-                    onChange={handleChange}
-                    placeholder="handUse"
-                    type="text"
-                    className="form-control"
-                />
-                <input
-                    value={user.sittingTime}
+                    defaultValue={"title"}
+                    className="mt-4"
                     name="sittingTime"
+                    id="2"
+                >
+                    <option disabled value="title">
+                        Select
+                    </option>
+                    <option value="1-3hr">1-3 hours</option>
+                    <option value="4-6hr">4-6 hours</option>
+                    <option value="7+hr">7+ hours</option>
+                </select>
+                <label>Choose your average standing time:</label>
+                <select
                     onChange={handleChange}
-                    placeholder="sittingTime"
-                    type="text"
-                    className="form-control"
-                />
-                <input
-                    value={user.standingTime}
+                    defaultValue={"title"}
+                    className="mt-4"
                     name="standingTime"
-                    onChange={handleChange}
-                    placeholder="standingTime"
-                    type="text"
-                    className="form-control"
-                />
+                    id="3"
+                >
+                    <option disabled value="title">
+                        Select
+                    </option>
+                    <option value="1-3">1-3 hours</option>
+                    <option value="4-6">4-6 hours</option>
+                    <option value="7+">7+ hours</option>
+                </select>
                 <button
                     onClick={handleSubmit}
                     className="form-control btn btn-success"
