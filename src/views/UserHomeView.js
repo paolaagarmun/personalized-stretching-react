@@ -29,9 +29,18 @@ const UserHomeView = () => {
             : 
                <div>
                <h4>This is your routine</h4>
-               <p>{userLoggedIn.routine.exercise1.name}</p>
-               <p>{userLoggedIn.routine.exercise2.name}</p>
-               <p>{userLoggedIn.routine.exercise3.name}</p>
+               
+               <p>{userLoggedIn.routine.exercise1?.name}</p>
+               <div>
+                <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise1._id}`} className="buttonCard btn btn-primary">
+                    View More
+                </Link>
+               </div>
+               <p>{userLoggedIn.routine.exercise2?.name}</p>
+               <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise2._id}`} className="buttonCard btn btn-primary">
+                    View More
+                </Link>
+               <p>{userLoggedIn.routine.exercise3?.name}</p>
                <p>{userLoggedIn.routine.notes}</p>
 
                 </div>

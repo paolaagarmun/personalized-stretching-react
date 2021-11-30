@@ -27,7 +27,6 @@ const UserProfileView = () => {
         {userLoggedIn.sittingTime}
         <br/>
         {userLoggedIn.standingTime}
-
         </>
     )
 }

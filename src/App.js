@@ -12,11 +12,13 @@ import AuthRoute from './components/AuthRoute'
 import AdminRoute from './components/AdminRoute'
 import UserProfileView from './views/UserProfileView'
 import UserHomeView from './views/UserHomeView'
+import MainPageView from './views/MainPageView';
 
 function App() {
   return (
     <>
       <NavBar/>
+      <MainPageView/>
       <Routes>
         <Route path="/signup" element={<SignupView/>}/>
         <Route path="/login" element={<LoginView/>}/>

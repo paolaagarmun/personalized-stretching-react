@@ -75,7 +75,7 @@ const EditRoutineView = () => {
             <div>
             <h2>Edit the routine for {user.name}</h2>
             <Form>
-                <Form.Label>Current: {user.routine?.exercise1.name}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise1?.name}</Form.Label>
                 <Form.Select 
                     name = "exercise1"
                     value = {routine.exercise1}
@@ -89,7 +89,7 @@ const EditRoutineView = () => {
                             {exercise.name}
                         </option>))}
                 </Form.Select>
-                <Form.Label>Current: {user.routine?.exercise2.name}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise2?.name}</Form.Label>
                 <Form.Select 
                     name = "exercise2"
                     value = {routine.exercise2}
@@ -103,7 +103,7 @@ const EditRoutineView = () => {
                             {exercise.name}
                         </option>))}
                 </Form.Select>
-                <Form.Label>Current: {user.routine?.exercise3.name}</Form.Label>
+                <Form.Label>Current: {user.routine?.exercise3?.name}</Form.Label>
                 <Form.Select 
                     name = "exercise3"
                     value = {routine.exercise3}

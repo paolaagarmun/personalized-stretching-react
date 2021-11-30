@@ -20,3 +20,9 @@ export const getSingleExerciseFromApi = async (id) => {
     const response = await axios.get(`http://localhost:5000/api/v1/exercises/exercise/${id}`);
     return response;
 }
+
+//DELETE single exercise 
+export const deleteSingleExercise = async (id) => {
+    const response = await axios.delete(`http://localhost:5000/api/v1/exercises/exercise/${id}`);
+    return response;
+}

@@ -28,6 +28,7 @@ const AddExerciseView = () => {
         console.log(exercise)
         event.preventDefault();
         createExercise(exercise);
+        window.location.reload()
     }
 
     const [exercises, setExercises] = useState([]);
