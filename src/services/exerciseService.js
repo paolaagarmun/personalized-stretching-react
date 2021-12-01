@@ -19,8 +19,6 @@ export const imageUploadToApi = async ( id, img) => {
     return response;
 }
 
-
-
 //GET/exercises
 export const getAllExercises = async () => {
     const response = await axios.get(`http://localhost:5000/api/v1/exercises`);
