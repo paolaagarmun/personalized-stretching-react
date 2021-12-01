@@ -6,6 +6,8 @@ import {getAllExercises} from '../services/exerciseService'
 import {getSingleRoutineFromApi,updateRoutineInApi} from '../services/routineService'
 import {getSingleUserFromApi} from '../services/userService'
 
+import './AddExercisesView.css'
+
 const EditRoutineView = () => {
     const [routine, setRoutine] = useState({
         exercise1: "",
@@ -74,7 +76,7 @@ const EditRoutineView = () => {
         <div className="container mt-5" >
             <div>
             <h2>Edit the routine for {user.name}</h2>
-            <Form>
+            <Form className="addRoutineform ">
                 <Form.Label>Current: {user.routine?.exercise1?.name}</Form.Label>
                 <Form.Select 
                     name = "exercise1"
@@ -117,6 +119,8 @@ const EditRoutineView = () => {
                             {exercise.name}
                         </option>))}
                 </Form.Select>
+                <br/>
+                Open space to write details about the routine or other comments:
                 <FloatingLabel controlId="floatingTextarea2" label="Comments">
                     <Form.Control
                         onChange={handleRoutineChange}
@@ -129,6 +133,7 @@ const EditRoutineView = () => {
                     />
                 </FloatingLabel>
                 <Button 
+                    className="routineSubmitBtn"
                     onClick={handleSumbit}
                     variant="primary" 
                     type="submit">

@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <NavBar/>
-      <MainPageView/>
       <Routes>
+        <Route path="/" element={<MainPageView/>}/>
         <Route path="/signup" element={<SignupView/>}/>
         <Route path="/login" element={<LoginView/>}/>
         {/* Admin routes */}

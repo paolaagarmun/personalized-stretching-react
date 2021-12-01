@@ -2,6 +2,8 @@ import { useState } from "react";
 import { signUpUser } from "../services/authService";
 import { useNavigate } from 'react-router';
 
+import './SignupView.css'
+
 const SignupView = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({
@@ -38,8 +40,8 @@ const SignupView = () => {
 
     return (
         <div className="container">
-            <form className="form-control">
-                <h2>Sign Up</h2>
+            <form className="form-signup">
+            <label>Enter your full name: </label>
                 <input
                     value={user.name}
                     name="name"
@@ -47,7 +49,8 @@ const SignupView = () => {
                     placeholder="name"
                     type="text"
                     
-                />
+                /> <br/>
+                <label>Enter a valid email address: </label>
                 <input
                     value={user.email}
                     name="email"
@@ -55,7 +58,8 @@ const SignupView = () => {
                     placeholder="email"
                     type="text"
                     
-                />
+                /> <br/>
+                <label>Create a password: </label>
                 <input
                     value={user.password}
                     name="password"
@@ -64,7 +68,7 @@ const SignupView = () => {
                     type="password"
                     
                 />
-                <label>How much weight do you carry daily?:</label>
+                <label>How much weight do you carry daily?: </label>
                 <select
                     onChange={handleChange}
                     defaultValue={"title"}
@@ -79,7 +83,7 @@ const SignupView = () => {
                     <option value="10-15">10-15lbs</option>
                     <option value="15+">15+ lbs</option>
                 </select>
-                <label>Choose your average sitting time:</label>
+                <label>Choose your average sitting time: </label>
                 <select
                     onChange={handleChange}
                     defaultValue={"title"}
@@ -94,7 +98,7 @@ const SignupView = () => {
                     <option value="4-6hr">4-6 hours</option>
                     <option value="7+hr">7+ hours</option>
                 </select>
-                <label>Choose your average standing time:</label>
+                <label>Choose your average standing time: </label>
                 <select
                     onChange={handleChange}
                     defaultValue={"title"}
@@ -111,9 +115,9 @@ const SignupView = () => {
                 </select>
                 <button
                     onClick={handleSubmit}
-                    className="form-control btn btn-success"
+                    className="form-control btn"
                 >
-                Sign up 
+                SIGN UP
                 </button>
             </form>
         </div>

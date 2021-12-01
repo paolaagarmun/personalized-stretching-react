@@ -8,7 +8,7 @@ import ExerciseCard from "../components/ExerciseCard"
 import './AddExercisesView.css'
 
 const AddExerciseView = () => {
-
+    const [preview, setPreview] = useState("");
     const [exercise, setExercise] = useState({
         name: "",
         bodypartTarget: "",
@@ -24,6 +24,14 @@ const AddExerciseView = () => {
         });
     };
 
+    const handleImageChange = (event) => {
+        const imageFile = event.target.files[0];
+        setExercise({
+            ...exercise,
+            image: imageFile,
+        });
+        setPreview(URL.createObjectURL(imageFile));
+    }
     const handleSubmit = (event) => {
         console.log(exercise)
         event.preventDefault();
@@ -55,8 +63,8 @@ const AddExerciseView = () => {
                     type="text" 
                     placeholder="Enter name of exercise" 
                 />
-
-                <Form.Label>Focus??:</Form.Label>
+                <br/>
+                <Form.Label>Body part this stretch focuses on:</Form.Label>
                 <Form.Control 
                     name="bodypartTarget"
                     value={exercise.bodypartTarget}
@@ -65,7 +73,7 @@ const AddExerciseView = () => {
                     placeholder="Enter muscle or body area this exercise targets"
 
                 />
-
+                <br/>
                 <Form.Label>Video URL:</Form.Label>
                 <Form.Control 
                     name="videoURL"
@@ -75,15 +83,16 @@ const AddExerciseView = () => {
                     placeholder="Enter a video link of demonstration if available" 
 
                 />
-               
+               <br/>
                 <Form.Label>Image:</Form.Label>
                 <Form.Control 
+                    onChange={handleImageChange}
+                    placeholder="Add image .jpg here"
                     name="image"
-                    type="string" 
-                    placeholder="TO-DO"
-                
+                    type="file" 
+                    accept="image/*"
                 />
-            
+                <br/>
                 <Form.Label>Deatils:</Form.Label>
                 <Form.Control 
                     name="explanation"
@@ -92,20 +101,20 @@ const AddExerciseView = () => {
                     placeholder="Enter details or comments to share about this exercise" 
                     
                 />
-
-                <Button 
+                <br/>
+                <Button className="btnSubmit"
                     onClick={handleSubmit}
                     variant="primary" 
                     type="submit">
-                    Create exercise
+                    CREATE EXERCISE
                 </Button>
             </Form>  
             </div>
             <div className="d-flex" style={{height: "100vh"}}>
                 <div className="vr"></div>
             </div>
-            <div className="container mt-3">
-            <h2>Exercise library</h2>
+            <div className="container exerciseCards">
+            <h2 class="exerciseLib">Exercise library</h2>
             <div className="container">
                 { exercises.length === 0 && (
                     <h2>No exercises in library</h2>

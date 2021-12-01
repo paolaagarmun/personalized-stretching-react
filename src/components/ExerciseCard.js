@@ -26,6 +26,7 @@ const ExerciseCard = ({obj}) => {
                 </Card.Title>
                 <img className={"exerciseCardImage"} src={obj.image ? obj.image : stretchingImage} alt=""/>
                 <button
+                    className="btnDelete"
                     onClick={handleDelete}
                 >
                     Delete Exercise

@@ -1,0 +1,17 @@
+
+.form {
+    width: 30vw;
+    height: 40vh;
+    margin-left: 25em;
+}
+
+.form button{
+    background-color: #2ec4b6;
+    padding: 20px 100px;
+    color: white;
+    letter-spacing: .2rem;
+    border: none
+}
+.form input {
+    margin: 5px 0;
+}

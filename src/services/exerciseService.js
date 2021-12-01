@@ -4,10 +4,22 @@ import axios from 'axios';
 
 //POST/exercise
 export const createExercise = async (exercise) => {
-    const response = await axios.post(`http://localhost:5000/api/v1/exercises/exercise`, exercise);
-    alert("Created exercise successfully");
+    const {image, ...newExercise} = exercise
+    const response = await axios.post(`http://localhost:5000/api/v1/exercises/exercise`, newExercise);
+    await imageUploadToApi(response.data._id, image)
+    //alert("Created exercise successfully");
     return response;
 }
+
+//POST/image
+export const imageUploadToApi = async ( id, img) => {
+    const formData = new FormData();
+    formData.append('image', img);
+    const response = axios.post(`http://localhost:5000/api/v1/exercises/exercise/imageUpload/${id}`, formData);
+    return response;
+}
+
+
 
 //GET/exercises
 export const getAllExercises = async () => {

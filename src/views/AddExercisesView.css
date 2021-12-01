@@ -7,3 +7,22 @@
     width: 40vw;
     margin-right: 10px;;
 }
+
+.btnSubmit {
+    background-color: #2ec4b6;
+    padding: 10px 80px;
+    color: white;
+    letter-spacing: .2rem;
+    border: none;
+}
+
+.exerciseCards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 3px;
+}
+
+.exerciseLib{
+    height: 5vh;
+}

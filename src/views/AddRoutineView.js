@@ -5,6 +5,8 @@ import { getAllExercises } from "../services/exerciseService";
 import { createRoutineInApi } from "../services/routineService";
 import { getSingleUserFromApi } from "../services/userService";
 
+import './AddRoutineView.css'
+
 const AddRoutineView = () => {
     const [exercises, setExercises] = useState([])
     const [routine, setRoutines] = useState({});
@@ -49,7 +51,7 @@ const AddRoutineView = () => {
     return (
         <div className="container mt-5" >
             <h2>{user.name}'s Routine</h2>
-            <Form>
+            <Form className="addRoutineform">
                 
                 <Form.Label>Select first exercise:</Form.Label>
                 <Form.Select 
@@ -66,7 +68,7 @@ const AddRoutineView = () => {
                         </option>
                     ))}
                 </Form.Select>
-
+                <br/>
                 <Form.Label>Select second exercise:</Form.Label>
                 <Form.Select 
                     aria-label="Default select example"
@@ -82,7 +84,7 @@ const AddRoutineView = () => {
                         </option>
                     ))}
                 </Form.Select>
-
+                <br/>
                 <Form.Label>Select third exercise:</Form.Label>
                 <Form.Select 
                     aria-label="Default select example"
@@ -98,8 +100,8 @@ const AddRoutineView = () => {
                         </option>
                     ))}
                 </Form.Select>
-
-                
+                <br/>
+                Open space to write details about the routine or other comments:
                 <FloatingLabel controlId="floatingTextarea2" label="Comments">
                     <Form.Control
                     onChange={handleChange}
@@ -111,6 +113,7 @@ const AddRoutineView = () => {
                     />
                 </FloatingLabel>
                 <Button 
+                    className="routineSubmitBtn"
                     onClick={handleSubmit}
                     variant="primary" 
                     type="submit">

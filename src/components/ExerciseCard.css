@@ -5,3 +5,8 @@
 .card-component {
     text-align: center;
 }
+.btnDelete{
+    background-color: white;
+    border-color: black;
+    border-radius: 8px;
+}

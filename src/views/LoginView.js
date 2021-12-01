@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import { isAuthenticated, loginUserToApi } from "../services/authService"
 
+import './LoginView.css'
 
 
 const LoginView = () => {
@@ -30,7 +31,6 @@ const LoginView = () => {
             } else {
                 navigate(`/routine/${userResponse.data._id}`);
             }
-            
             await window.location.reload();
         } catch (error) {
             console.log(error)
@@ -44,7 +44,6 @@ const LoginView = () => {
     return (
         <div className="container mt-5">
         <form className="form">
-            <h2>Login View</h2>
             <input
             onChange={handleChange}
             name="email" 
@@ -57,8 +56,8 @@ const LoginView = () => {
             className="form-control" type="password" placeholder="password" />
             <button
             onClick={handleSubmit}  
-            className="form-control btn btn-success">
-                Login
+            className="form-control btn ">
+                LOG IN
             </button>
         </form>
         </div>

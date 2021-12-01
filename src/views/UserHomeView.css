@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+.routineContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    margin-left: 15rem;
+}
+
+.notes{
+    width: 30vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.linediv {
+    color:#2ec4b6;
+}
+
+.exerciseName {
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+.btnViewmore{
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 9px;
+    color: black;
+}
+.btnViewmore:hover{
+    color: #ee6c4d;
+
+}
+
+.routineTitle{
+    margin-left: 13%;
+    margin-top: 20px;
+}
+
+.welcomeMsg{
+    font-style: italic;
+    margin-left: 25px;
+}
+
+.username{
+    margin: 2% 40%;
+    width: 20vw
+}
+.questionnaireanswers{
+    margin: 2% 35%;
+    width: 40vw
+}

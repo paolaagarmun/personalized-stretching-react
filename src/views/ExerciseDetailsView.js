@@ -22,7 +22,7 @@ const ExerciseDetailsView = () => {
         <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
             <h2 style={{fontWeight: "bold", marginTop: '40px'}}>{exercise.name}</h2>     
-            <img className={"exerciseCardImage"} src={exercise.image ? exercise.image : stretchingImage} alt=""/>
+            <img className={"exerciseCardImage"} src={exercise?.image} alt=""/>
             <h4>Target: {exercise.bodypartTarget}</h4>
             <h4>Explanation: {exercise.explanation}</h4>
             </div>

@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router";
 import {getSingleUserFromApi} from '../services/userService'
 import { Link } from "react-router-dom";
 
+import './UserHomeView.css'
 
 const UserHomeView = () => {
     const [userLoggedIn, setUserLoggedIn] = useState({})
@@ -22,26 +23,40 @@ const UserHomeView = () => {
     return (
         
         <>
-        <h2>Welcome, {userLoggedIn.name}</h2>
+        <h3 className="welcomeMsg">Hey, {userLoggedIn.name}!</h3>
         
             {!userLoggedIn.routine ? 
-                <h4>No routines yet</h4>
+                <h4>We are still working on your routine, please come back in a bit!</h4>
             : 
                <div>
-               <h4>This is your routine</h4>
-               
-               <p>{userLoggedIn.routine.exercise1?.name}</p>
-               <div>
-                <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise1._id}`} className="buttonCard btn btn-primary">
-                    View More
+               <h4 className="routineTitle">This is your routine:</h4>
+
+               <div className="routineContainer">
+                <div>
+                <p className="linediv">________________</p>
+                <p className="exerciseName">{userLoggedIn.routine?.exercise1?.name}</p>
+                
+                    <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise1?._id}`} className="btnViewmore">
+                        View More
+                    </Link>
+                <p className="linediv">________________</p>
+                <p className="exerciseName">{userLoggedIn.routine?.exercise2?.name}</p>
+                <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise2?._id}`} className="btnViewmore">
+                        View More
                 </Link>
+                <p className="linediv">________________</p>
+                <p className="exerciseName">{userLoggedIn.routine?.exercise3?.name}</p>
+                <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise3?._id}`} className="btnViewmore">
+                        View More
+                    </Link>
+                    </div>
+                    <div className="notes">
+                        <p>{userLoggedIn.routine.notes}</p>
+                    </div>
+
                </div>
-               <p>{userLoggedIn.routine.exercise2?.name}</p>
-               <Link to={`/exerciseDetails/${userLoggedIn.routine.exercise2._id}`} className="buttonCard btn btn-primary">
-                    View More
-                </Link>
-               <p>{userLoggedIn.routine.exercise3?.name}</p>
-               <p>{userLoggedIn.routine.notes}</p>
+               
+               
 
                 </div>
                                     

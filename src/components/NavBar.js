@@ -7,12 +7,12 @@ import './NavBar.css'
 const NavBar = () => {
     const user = isAuthenticated();
     return(
-        <Navbar bg="light" expand="lg">
+        <Navbar sticky="top" className="navbar" expand="lg">
         <Container>
-          
+        <Link className="name" to="/">Personalized Stretching</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          
+            <Nav className="me-auto adminNav">
               {
                 user.role === "ADMIN" && (
                   <>
@@ -21,28 +21,28 @@ const NavBar = () => {
                         alt="logo"
                     />
                   </Link>
-                  <Link to="/adminHome">Home</Link>
-                  <Link to="/addExercise">Add Exercise</Link>
+                  <Link className="linksAdmin" to="/adminHome">Home</Link>
+                  <Link className="linksAdmin addExercise"to="/addExercise">Add Exercise</Link>
                   </>
                 )
               }
             </Nav>
-            <Nav className="links">
+            <Nav className="me-auto links">
             
               {user.role === "USER" && (
-                <>
+                <div className="userNav">
                   <Link to={`/routine/${user.id}`}>
                     <Image className="img-navbar" src="https://cdn-icons-png.flaticon.com/512/10/10699.png"
                         alt="logo"
                     />
                   </Link>
                   <Link to={`/routine/${user.id}`}>Home</Link>
-                  <a style={{ margin: '8px'}}>
-                    Welcome, {user.name}
-                  </a>
-                  <Link to={`/profile/${user.id}`}>Profile</Link>
                   
-                </>
+                  <Link to={`/profile/${user.id}`}>Profile</Link>
+                  <div className="userWelcome" style={{ margin: '8px'}}>
+                    Welcome, {user.name}
+                  </div>
+                </div>
                 )}
                 
                 { user ? (
@@ -51,8 +51,9 @@ const NavBar = () => {
                   </button>
                 ) : (
                   <>
-                  <Link to="/login">Login</Link>
-                  <Link to="/signup">Sign Up</Link>
+                  
+                  <Link to="/login" className="logi-signup-link">Login</Link>
+                  <Link to="/signup" className="logi-signup-link">Sign Up</Link>
                   </>
                 )
                   
@@ -60,7 +61,7 @@ const NavBar = () => {
                 
                 
             </Nav>
-          </Navbar.Collapse>
+          
         </Container>
       </Navbar>
         

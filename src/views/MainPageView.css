@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Roboto:wght@400;700&display=swap');
+
+.link {
+    text-decoration: none;
+    background-color: #2ec4b6;
+    padding: 20px 100px;
+    color: white;
+    letter-spacing: .2rem;
+}
+
+.mainpage{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.img{
+    margin-top: 40px;
+    
+}
+
+
+.welcome {
+    text-align: center;
+    height: 50vh;
+    padding: 60px;
+}
+.welcome h4{
+    font-size: 4vw;
+}
+.welcome p {
+    font-size: x-large;
+    font-style: italic;
+}
+
+.seeyou {
+    text-align: center;
+    color: #ee6c4d
+}
+.seeyou1 {
+    text-align: center;
+    color: #ee6c4d;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.why{
+    margin-top: 15px;
+    background-image: url('https://media.istockphoto.com/photos/beautiful-sea-level-with-fantasy-dark-sky-picture-id541137832?b=1&k=20&m=541137832&s=170667a&w=0&h=QZUFloRfrNUUQEZyPPN0lOiUedL9yDP4ENcP31Vqw5Q=');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100vw;
+    height: 40vh;
+    text-align: center;
+    padding: 12px 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.howitworks {
+    text-align: center;
+}
+
+.line{
+    color:#2ec4b6;
+}

@@ -1,6 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+.container {
+    margin: 0;
+}
 .img-navbar {
     width: 40px;
     border-radius: 10px;
 }
+.navbar {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    
+}
 
+.logi-signup-link {
+    text-decoration: none;
+    color: #2ec4b6;
+    margin-left: 5vw;
+}
 
+.name {
+    color: #2ec4b6;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black
+}
+
+.adminNav a{
+    text-decoration: none;
+    margin-left: 8px;
+}
+.linksAdmin{
+    margin-top: 7px;
+    color: black;
+    border-radius:8px;
+    padding: 3px 8px
+}
+.linksAdmin:hover{
+    background-color: #2ec4b6;
+    color: white
+}
+
+.addExercise{
+    margin-left: 50px!important;
+}
+
+.userNav {
+   
+    display:flex
+}
+.userNav a{
+    text-decoration: none;
+    margin-left: 8px;
+    margin-top:6px;
+    color: black;
+    
+}
+.userNav a:hover{
+    background-color: #2ec4b6;
+    color: white;
+    border-radius:8px;
+    padding: 3px 8px
+}
+.userWelcome {
+    width: 15vw
+}
