@@ -14,7 +14,7 @@ const AdminHomeView = () => {
     //need api call
     useEffect(() => {
         getUsers();
-        console.log(users)
+        //console.log(users)
     }, [])
 
     const getUsers = async () => {

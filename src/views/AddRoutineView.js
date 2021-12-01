@@ -37,19 +37,19 @@ const AddRoutineView = () => {
     }
     
     const handleSubmit = (event) => {
-        console.log(routine)
+        //console.log(routine)
         event.preventDefault();
         let obj = {
             ...routine,
             user: id
         }
-        console.log(obj);
+        //console.log(obj);
         createRoutineInApi(obj);
     }
     
 
     return (
-        <div className="container mt-5" >
+        <div className="container mt-5 everything" >
             <div className="addroutineContainer">
                 <h2>{user.name}'s Routine</h2>
                 <Form className="addRoutineform">

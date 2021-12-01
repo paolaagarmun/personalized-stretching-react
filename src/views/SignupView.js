@@ -24,7 +24,7 @@ const SignupView = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(user);
+       // console.log(user);
         signUpUser(user);
         setUser({
             name: "",

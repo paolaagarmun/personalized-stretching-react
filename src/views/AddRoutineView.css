@@ -15,3 +15,11 @@ h2{
     border: none;
     margin-top: 5px;
 }
+
+.everything{
+    display: flex;
+    justify-content: space-around;
+}
+.userProfileContainer{
+    margin-top: 40px;
+}

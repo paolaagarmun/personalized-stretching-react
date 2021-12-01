@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:5000/api/v1'
+const apiUrl = process.env.REACT_APP_API_URL;
 const tokenString = 'jwtpersonalizedstretching';
 
 //POST login

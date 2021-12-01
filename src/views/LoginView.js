@@ -25,7 +25,7 @@ const LoginView = () => {
         event.preventDefault();
         try {
             const userResponse = await loginUserToApi(user);
-            console.log(userResponse);
+            //console.log(userResponse);
             if (userResponse.data.role === 'ADMIN') {
                 navigate("/adminHome");
             } else {

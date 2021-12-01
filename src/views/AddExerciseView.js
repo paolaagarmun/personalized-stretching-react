@@ -33,10 +33,10 @@ const AddExerciseView = () => {
         setPreview(URL.createObjectURL(imageFile));
     }
     const handleSubmit = (event) => {
-        console.log(exercise)
+        //console.log(exercise)
         event.preventDefault();
         createExercise(exercise);
-       // window.location.reload()
+                //window.location.reload()
     }
 
     const [exercises, setExercises] = useState([]);
@@ -84,8 +84,9 @@ const AddExerciseView = () => {
 
                 />
                <br/>
-                <Form.Label>Image:</Form.Label>
+                <Form.Label>Image: </Form.Label> <br/>
                 <input
+                    className="choosefile"
                     onChange={handleImageChange}
                     placeholder="Add image .jpg here"
                     name="image"

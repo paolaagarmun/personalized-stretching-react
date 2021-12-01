@@ -42,7 +42,7 @@ const EditRoutineView = () => {
     const fetchUser = async () => {
         const response = await getSingleUserFromApi(id);
         setUser(response.data)
-        console.log(user);
+       // console.log(user);
     }
 
     const handleRoutineChange = (event) => {
@@ -54,7 +54,7 @@ const EditRoutineView = () => {
 
     const handleSumbit = async (event) => {
         event.preventDefault();
-        console.log(routine)
+        //console.log(routine)
         const response = await updateRoutineInApi({_id: user.routine._id, ...routine});
         fetchUser();
     }

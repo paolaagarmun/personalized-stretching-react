@@ -17,7 +17,7 @@ const ExerciseDetailsView = () => {
         setExercise(response.data)
     }
 
-    console.log("HERE:",exercise )
+    //console.log("HERE:",exercise )
     const stretchingImage = "https://cdn-icons-png.flaticon.com/512/10/10606.png"
     return (
         <div className="container mt-5">

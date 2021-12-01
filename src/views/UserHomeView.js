@@ -18,7 +18,7 @@ const UserHomeView = () => {
         const response = await getSingleUserFromApi(id);
         setUserLoggedIn(response.data)
     }
-    console.log("USER:", userLoggedIn);
+  // console.log("USER:", userLoggedIn);
     //will need Link to single exercise view
     return (
         

@@ -10,3 +10,7 @@
     border-color: black;
     border-radius: 8px;
 }
+.btnDelete:hover{
+    background-color: black;
+    color:white
+}
