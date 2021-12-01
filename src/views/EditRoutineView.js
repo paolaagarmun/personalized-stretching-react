@@ -18,43 +18,30 @@ const EditRoutineView = () => {
     const [exercises, setExercises] = useState([]);
     const [user, setUser] = useState({});
     const { id } = useParams();
-
     
-    // console.log("routine object:",user.routine)
-
     useEffect(() => {
         fetchUser();
         getExercises();
     }, [])
-    
-    useEffect(() => {
-        getRoutine();
-    }, [routine])
 
-    const getRoutine = async () => {
-        console.log("ROUTINE", user.routine);
-        // const response = await getSingleRoutineFromApi(user.routine._id);
-        // await setRoutine(response.data);
-        // console.log("ROUTINE", response.data);
-        // setRoutine({
-        //     ...routine,
-        //     notes: user.routine.notes
-        // })
-    }
+    // set user, state 
+    useEffect(() => {
+        setRoutine({
+            exercise1: user.routine?.exercise1,
+            exercise2: user.routine?.exercise2,
+            exercise3: user.routine?.exercise3,
+            notes: user.routine?.notes
+        })
+    }, [user])
     
     const getExercises = async () => {
         const response = await getAllExercises();
         setExercises(response.data);
-        
     }
     
     const fetchUser = async () => {
         const response = await getSingleUserFromApi(id);
-        await setUser(response.data)
-        await setRoutine({
-            ...routine,
-            notes: user.routine?.notes
-        })
+        setUser(response.data)
         console.log(user);
     }
 
@@ -63,13 +50,13 @@ const EditRoutineView = () => {
             ...routine,
             [event.target.name]: event.target.value
         });
-        // console.log(routine)
     }
 
     const handleSumbit = async (event) => {
         event.preventDefault();
-        const response = await updateRoutineInApi(routine);
-        getRoutine();   
+        console.log(routine)
+        const response = await updateRoutineInApi({_id: user.routine._id, ...routine});
+        fetchUser();
     }
 
     return (
@@ -123,13 +110,13 @@ const EditRoutineView = () => {
                 Open space to write details about the routine or other comments:
                 <FloatingLabel controlId="floatingTextarea2" label="Comments">
                     <Form.Control
+                        value={routine.notes}
                         onChange={handleRoutineChange}
                         className="form-control"
                         name="notes"
                         as="textarea"
                         placeholder="Leave a comment for the user here"
                         style={{ height: '100px' }}
-                        id = ""
                     />
                 </FloatingLabel>
                 <Button 

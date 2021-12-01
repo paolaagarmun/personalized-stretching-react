@@ -18,7 +18,6 @@ export const getSingleRoutineFromApi = async (id) => {
 
 //UPDATE routine/:id
 export const updateRoutineInApi = async (obj) => {
-    const {...exercise} = obj
-    const response = await axios.put(`http://localhost:5000/api/v1/routines/routine/${obj._id}`, exercise);
-    return response
+    const response = await axios.put(`http://localhost:5000/api/v1/routines/routine/${obj._id}`, obj);
+    return response;
 }
