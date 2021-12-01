@@ -10,17 +10,13 @@ const NavBar = () => {
         <Navbar sticky="top" className="navbar" expand="lg">
         <Container>
         <Link className="name" to="/">Personalized Stretching</Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
           
             <Nav className="me-auto adminNav">
               {
                 user.role === "ADMIN" && (
                   <>
-                  <Link to="/adminHome">
-                    <Image className="img-navbar" src="https://cdn-icons-png.flaticon.com/512/10/10699.png"
-                        alt="logo"
-                    />
-                  </Link>
+                 
                   <Link className="linksAdmin" to="/adminHome">Home</Link>
                   <Link className="linksAdmin addExercise"to="/addExercise">Add Exercise</Link>
                   </>
@@ -31,11 +27,6 @@ const NavBar = () => {
             
               {user.role === "USER" && (
                 <div className="userNav">
-                  <Link to={`/routine/${user.id}`}>
-                    <Image className="img-navbar" src="https://cdn-icons-png.flaticon.com/512/10/10699.png"
-                        alt="logo"
-                    />
-                  </Link>
                   <Link to={`/routine/${user.id}`}>Home</Link>
                   
                   <Link to={`/profile/${user.id}`}>Profile</Link>

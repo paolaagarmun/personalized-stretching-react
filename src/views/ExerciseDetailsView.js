@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router'
 import {getSingleExerciseFromApi} from '../services/exerciseService'
 
+import './ExerciseDetailsView.css'
+
 const ExerciseDetailsView = () => {
     const [exercise, setExercise] = useState({});
     const {id} = useParams();
@@ -21,13 +23,13 @@ const ExerciseDetailsView = () => {
         <div className="container mt-5">
         <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
-            <h2 style={{fontWeight: "bold", marginTop: '40px'}}>{exercise.name}</h2>     
+            <h4 style={{fontWeight: "bold", marginTop: '30px'}}>{exercise.name}</h4>     
             <img className={"exerciseCardImage"} src={exercise?.image} alt=""/>
-            <h4>Target: {exercise.bodypartTarget}</h4>
-            <h4>Explanation: {exercise.explanation}</h4>
+            <p>Target: {exercise.bodypartTarget}</p>
+            <p>Explanation: {exercise.explanation}</p>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
-            <div>{exercise.videoURL}</div>
+            <iframe src={exercise.videoURL}></iframe>
             </div>
         </div>
     </div>

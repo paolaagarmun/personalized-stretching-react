@@ -46,7 +46,7 @@ p{
     margin-left: 25px;
 }
 
-.username{
+/* .username{
     margin: 2% 40%;
     width: 20vw
 }
@@ -54,3 +54,21 @@ p{
     margin: 2% 35%;
     width: 40vw
 }
+*/
+
+.userProfile{
+    display: flex;
+    margin-top: 2%;
+}
+.userProfile img{
+    width: 30vw
+}
+.userinfo{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+.answers{
+    font-weight: 800;
+    color:#ee6c4d
+} 
