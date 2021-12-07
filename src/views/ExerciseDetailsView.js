@@ -1,3 +1,5 @@
+import React from "react";
+import ReactPlayer from 'react-player'
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router'
 import {getSingleExerciseFromApi} from '../services/exerciseService'
@@ -29,7 +31,7 @@ const ExerciseDetailsView = () => {
             <p>Explanation: {exercise.explanation}</p>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
-            <iframe src={exercise.videoURL}></iframe>
+            <ReactPlayer url={exercise.videoURL}></ReactPlayer>
             </div>
         </div>
     </div>
