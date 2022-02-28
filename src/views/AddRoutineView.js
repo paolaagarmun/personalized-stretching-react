@@ -37,13 +37,11 @@ const AddRoutineView = () => {
     }
     
     const handleSubmit = (event) => {
-        //console.log(routine)
         event.preventDefault();
         let obj = {
             ...routine,
             user: id
         }
-        //console.log(obj);
         createRoutineInApi(obj);
     }
     
